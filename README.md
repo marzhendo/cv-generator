@@ -1,70 +1,96 @@
-# Getting Started with Create React App
+# ATS-Friendly CV Generator
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Tentang Aplikasi
 
-## Available Scripts
+Aplikasi web sederhana untuk membuat CV dengan format yang mudah dibaca sistem ATS (Applicant Tracking System). Dirancang agar siapa saja bisa bikin CV profesional tanpa ribet.
 
-In the project directory, you can run:
+## Fitur
 
-### `npm start`
+- **Form Input Lengkap** - Isi data personal, pengalaman kerja, pendidikan, dan skill
+- **Tambah/Hapus Dinamis** - Bisa nambah atau hapus section pengalaman kerja dan pendidikan sesuai kebutuhan
+- **Live Preview** - Langsung lihat hasil CV di sebelah kanan sambil ngisi form
+- **Download Langsung** - Export ke format .txt yang clean dan ATS-friendly
+- **Responsive** - Bisa dibuka di desktop maupun mobile
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Kenapa ATS-Friendly?
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Banyak perusahaan sekarang pakai sistem ATS untuk screening CV otomatis sebelum sampai ke HRD. CV dengan format fancy kadang malah susah dibaca sistemnya. Makanya aplikasi ini generate CV dengan format plain text yang simple tapi tetap rapi dan terstruktur.
 
-### `npm test`
+## Tech Stack
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- React.js
+- Tailwind CSS
+- Lucide React (untuk icon)
 
-### `npm run build`
+## Cara Pakai
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Isi form di sebelah kiri dengan data kamu
+2. Lihat preview CV di sebelah kanan
+3. Kalau udah oke, klik tombol "Download CV"
+4. File .txt bakal otomatis ke-download dengan nama file sesuai nama kamu
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Instalasi & Running Local
+```bash
+# Clone atau download project
+cd cv-generator
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Install dependencies
+npm install
+npm install lucide-react
 
-### `npm run eject`
+# Jalankan development server
+npm start
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Buka browser di `http://localhost:3000`
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Setup Tailwind CSS
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Ada dua cara:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+**Cara 1: Pakai CDN (lebih simple)**
+- Tambahkan di `public/index.html` dalam tag `<head>`:
+```html
 
-## Learn More
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+**Cara 2: Install via npm**
+```bash
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Lalu tambahkan di `src/index.css`:
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
 
-### Code Splitting
+## Struktur Project
+```
+cv-generator/
+├── public/
+│   └── index.html
+├── src/
+│   ├── App.js          # Main component
+│   └── index.css       # Global styles
+└── package.json
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Catatan
 
-### Analyzing the Bundle Size
+- CV yang di-generate berbentuk plain text (.txt) supaya kompatibel dengan semua sistem ATS
+- Format tanpa styling berlebihan memastikan informasi kamu terbaca dengan baik
+- File bisa langsung diupload ke portal job application atau di-copy paste ke form online
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## TODO / Improvement Ideas
 
-### Making a Progressive Web App
+- [ ] Tambah opsi export ke PDF
+- [ ] Simpan draft CV (localStorage)
+- [ ] Template CV dengan berbagai style
+- [ ] Export ke format DOCX
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## License
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+© 2026 Marzhendo. All rights reserved.
